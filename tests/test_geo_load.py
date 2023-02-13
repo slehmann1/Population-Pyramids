@@ -1,5 +1,5 @@
 from django.test import TestCase
-from scripts import geo_load
+from geotree.scripts import geo_load
 
 
 class GeoLoadTests(TestCase):
@@ -13,3 +13,4 @@ class GeoLoadTests(TestCase):
         self.assertEqual(geo_load.pascal_case_space("hELlo World"), "Hello World")
         self.assertEqual(geo_load.pascal_case_space("Hello"), "Hello")
         self.assertEqual(geo_load.pascal_case_space("HELLO world"), "Hello World")
+        

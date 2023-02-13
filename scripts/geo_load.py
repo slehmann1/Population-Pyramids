@@ -3,10 +3,11 @@ import numpy as np
 from geotree.models import GeoData, GeoName
 import math
 import os
+from site_proj.settings import BASE_DIR
 
 YEAR_RANGE = range(2001,2021)
 AGE_RANGE = range(0,91)
-_FILE_PATH = "\geotree\data\datadownload.xlsx"
+_FILE_PATH = "geotree/data/datadownload.xlsx"
 DELIMITER = '_'
 
 def run():
@@ -15,13 +16,18 @@ def run():
     Raises:
         ValueError: If there is a failure in reading from the excel file
     """
+
+    if GeoData.objects.all().exists():
+        print("Database already populated, no need to build database")
+        return
+
     print("Loading Data")
     #Clear pre-existing models. Note order is important due to keying.
     GeoData.objects.all().delete()
     GeoName.objects.all().delete()
     
     # Loads into dictionary of dataframes, where each key is a year, 
-    path = os.path.join(os.getcwd() + _FILE_PATH)
+    path = os.path.join(BASE_DIR, _FILE_PATH)
     df = pd.read_excel(path, sheet_name=None)
     print("Data Loaded")
 
