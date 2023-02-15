@@ -8,8 +8,8 @@ Plot out gendered [population pyramids](https://en.wikipedia.org/wiki/Population
 
 **Try it out [here](https://samuellehmann.com/populationpyramids/geo/London/).**
 
-Full stack web application built with Django and PostgreSQL that uses data from the [Office for National Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates). 
+Full stack web application built with Django and PostgreSQL that uses data from the [Office for National Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates). Deployed with Docker and AWS EC2. 
 
 **Dependencies:**
 
-Pandas, pytest, chart.js, bootstrap 
+Django, PostgresQL, Pandas, pytest, chart.js, bootstrap 
